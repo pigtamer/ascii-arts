@@ -73,7 +73,7 @@ SCALE_FLAG, SCALE_FACTOR = True, 1.5
 CANNY_LOWER, CANNY_UPPER = 0, 120
 WINSIZE = 3
 
-img = cv.imread("X:/cvImg/gays.jpg")
+img = cv.imread("X:/cvImg/misakimei.jpg")
 img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
 if SCALE_FLAG:
