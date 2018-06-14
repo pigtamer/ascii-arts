@@ -69,15 +69,15 @@ def hogger(img, cellsize = 3, MODE = 1):
 # Main
 
 DISP_FLAG = False
-SCALE_FLAG, SCALE_FACTOR = True, 1.5
+SCALE_FLAG, SCALE_FACTOR = False, 2
 CANNY_LOWER, CANNY_UPPER = 0, 120
-WINSIZE = 3
+WINSIZE = 4
 
-img = cv.imread("X:/cvImg/misakimei.jpg")
+img = cv.imread("X:/cvImg/ma.jpg")
 img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
 if SCALE_FLAG:
-    img = cv.resize(img, (int(img.shape[0]* SCALE_FACTOR), int(img.shape[1]*SCALE_FACTOR)))
+    img = cv.resize(img, (int(img.shape[1]* SCALE_FACTOR), int(img.shape[0]*SCALE_FACTOR)))
 
 # Canny the image
 imgCanny = cv.Canny(img, CANNY_LOWER, CANNY_UPPER)
