@@ -2,6 +2,18 @@ import cv2 as cv
 import numpy as np
 # import matplotlib.pyplot as plt
 
+
+def autoCanny(image, sigma=0.33):
+	# compute the median of the single channel pixel intensities
+    v = np.median(image)
+	# apply automatic Canny edge detection using the computed median
+    lower = int(max(0, (1.0 - sigma) * v))
+    upper = int(min(255, (1.0 + sigma) * v))
+    edged = cv.Canny(image, lower, upper)
+ 
+	# return the edged image
+    return edged
+
 def votter(vec):
     adder = np.zeros((5))
     for k in range(len(vec.flatten())):
@@ -52,6 +64,8 @@ def hogger(img, cellsize = 3, MODE = 1):
             else:
                 pass
             
+            # morechar = chr(np.random.randint(42, 122))*MODE
+
             if np.sum(patch) == 0:
                 morechar = " " * MODE
 
@@ -68,19 +82,25 @@ def hogger(img, cellsize = 3, MODE = 1):
 
 # Main
 
+SCALE_FLAG, SCALE_FACTOR = True, 1
+CANNY_LOWER, CANNY_UPPER = 0, 250
+AUTO_CANNY_FLAG = True
 DISP_FLAG = False
-SCALE_FLAG, SCALE_FACTOR = False, 2
-CANNY_LOWER, CANNY_UPPER = 0, 120
-WINSIZE = 4
 
-img = cv.imread("X:/cvImg/ma.jpg")
-img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+WINSIZE = 3
+
+img = cv.imread("X:/cvImg/liz2.jpg")
+if len(img.shape) >= 3:
+    img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
 if SCALE_FLAG:
     img = cv.resize(img, (int(img.shape[1]* SCALE_FACTOR), int(img.shape[0]*SCALE_FACTOR)))
 
 # Canny the image
-imgCanny = cv.Canny(img, CANNY_LOWER, CANNY_UPPER)
+if AUTO_CANNY_FLAG:
+    imgCanny = autoCanny(img, 0.9)
+else:
+    imgCanny = cv.Canny(img, CANNY_LOWER, CANNY_UPPER)
 
 cv.imwrite("edge.jpg", imgCanny)
 
