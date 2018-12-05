@@ -3,8 +3,14 @@ import sys
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
+"""
+Usage:
 
-
+    python pingplot.py <website url> <ping times>
+    e.g.    python pingplot.py google.com 20
+            would ping google.com for 20 times.
+"""
 def parse(filename, sepa_loc=r"=(\d*)ms", IF_PRINT=False):
     # parsinf function.
     file_annot = open(filename, 'r')
@@ -64,7 +70,10 @@ def main():
     labels = ["Pinged", "Time Out"]
     plt.pie([sum(success), len(success) - sum(success)], labels=labels, autopct='%1.1f%%')
     plt.title("Ping success %3.2f %%" % (100*sum(success)/len(success)))
-
+    plt.figure()
+    sns.set()
+    sns.distplot(pingdata)
+    plt.title("Distribution of time")
     plt.show()
 
     # os.system("del pingdata.txt")

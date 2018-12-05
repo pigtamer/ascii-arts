@@ -1,0 +1,37 @@
+
+Pinging twitter.com [104.244.42.129] with 32 bytes of data:
+Reply from 104.244.42.129: bytes=32 time=122ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=124ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=123ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=122ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=123ms TTL=56
+Request timed out.
+Reply from 104.244.42.129: bytes=32 time=126ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=124ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=126ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=127ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=187ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=123ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=124ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=123ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=123ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=128ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=122ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=123ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=123ms TTL=56
+Request timed out.
+Reply from 104.244.42.129: bytes=32 time=126ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=123ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=128ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=133ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=135ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=123ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=123ms TTL=56
+Request timed out.
+Reply from 104.244.42.129: bytes=32 time=123ms TTL=56
+Reply from 104.244.42.129: bytes=32 time=124ms TTL=56
+
+Ping statistics for 104.244.42.129:
+    Packets: Sent = 30, Received = 27, Lost = 3 (10% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 122ms, Maximum = 187ms, Average = 127ms

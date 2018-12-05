@@ -121,7 +121,7 @@ while(1):
 
     grOrientAdder = hogger(imgCanny, WINSIZE, 2)
 
-    cv.imwrite("edge.jpg", 255 - imgCanny)
+    # cv.imwrite("edge.jpg", 255 - imgCanny)
 
     if DISP_FLAG:
         cv.imshow("canny", cv.resize(255 - imgCanny, (int(PREVIEW_WINHEIGHT* img.shape[1] / img.shape[0]), PREVIEW_WINHEIGHT)))
